@@ -1,13 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.ed26d484.css",
-    "main.js": "/portfolio/static/js/main.d8e2c34e.js",
+    "main.css": "/portfolio/static/css/main.ef50ada9.css",
+    "main.js": "/portfolio/static/js/main.c9ff8587.js",
+    "static/media/Profile.png": "/portfolio/static/media/Profile.f677ba2d857947f275e7.png",
+    "static/media/mario_layout.png": "/portfolio/static/media/mario_layout.37c3d40c3fd333fe6c9f.png",
+    "static/media/Moovie_layout.png": "/portfolio/static/media/Moovie_layout.13d7eb4675a2ee456863.png",
+    "static/media/the_task_layout.png": "/portfolio/static/media/the_task_layout.54dac798974469bd6ecd.png",
+    "static/media/quizz_layout.png": "/portfolio/static/media/quizz_layout.b81c12f162d53e36dbda.png",
+    "static/media/clima_app_layout.png": "/portfolio/static/media/clima_app_layout.882a20e32673be8c5f62.png",
+    "static/media/flappybird_layout.png": "/portfolio/static/media/flappybird_layout.241fd861b0c2e29e7ce3.png",
     "index.html": "/portfolio/index.html",
-    "main.ed26d484.css.map": "/portfolio/static/css/main.ed26d484.css.map",
-    "main.d8e2c34e.js.map": "/portfolio/static/js/main.d8e2c34e.js.map"
+    "main.ef50ada9.css.map": "/portfolio/static/css/main.ef50ada9.css.map",
+    "main.c9ff8587.js.map": "/portfolio/static/js/main.c9ff8587.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed26d484.css",
-    "static/js/main.d8e2c34e.js"
+    "static/css/main.ef50ada9.css",
+    "static/js/main.c9ff8587.js"
   ]
 }
