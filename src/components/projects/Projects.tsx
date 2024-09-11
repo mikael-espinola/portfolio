@@ -21,7 +21,6 @@ export interface FetchProp {
 }
 
 const Projects = () => {
-  const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
   const [repositories, setRepositories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

@@ -10,6 +10,7 @@ export const Container = styled(Link)`
         padding: 0.5rem;
         border-radius: .25rem;
         position: relative;
+        font-size: 14px;
 
         &:hover{
                 &::after {

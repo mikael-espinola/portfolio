@@ -8,7 +8,6 @@ export const Container = styled.div`
     gap: 1.2rem;
 `
 
-
 export const Heading = styled.div`
     display: flex;
     flex-direction: column;
@@ -27,4 +26,5 @@ export const Span = styled.span`
 
 export const Title = styled.h4`
     font-size: 40px;
+    margin-top: 1.5rem;
 `
