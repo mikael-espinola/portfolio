@@ -15,12 +15,14 @@ const SocialMedia = () => {
         href="https://wa.me/5584998995683"
         aria-label="Whatsapp"
         title="Whatsapp"
+        target="_blank"
       >
         <FaWhatsapp />
       </SocialMediaLink>
       <SocialMediaLink
         aria-label="GitHub"
         title="GitHub"
+        target="_blank"
         $type="github"
         href="https://github.com/mikael-espinola  "
       >
@@ -29,6 +31,7 @@ const SocialMedia = () => {
       <SocialMediaLink
         aria-label="LinkedIn"
         title="LinkedIn"
+        target="_blank"
         $type="linkedin"
         href="https://www.linkedin.com/in/mikaelespinola/"
       >
@@ -37,6 +40,7 @@ const SocialMedia = () => {
       <SocialMediaLink
         aria-label="Gmail"
         title="Gmail"
+        target="_blank"
         $type="gmail"
         href="mailto:mikaelespinolaa@gmail.com"
       >
