@@ -5,9 +5,9 @@ type prop = {
 }
 
 const sendEmail = ({name, email, whatsapp, message}: prop) => {
-    const publicKey = 'vZ6T_502_9DOlU0F-'
-    const serviceId = 'service_be0zt9n'
-    const templateId = 'template_8psxwan'
+    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_EMAIL_KEY
+    const serviceId =  process.env.NEXT_PUBLIC_SERVICE_EMAIL_ID
+    const templateId = process.env.NEXT_PUBLIC_TEMPLATE_EMAIL_ID
     const templateParams = {
       name: name,
       email: email,
@@ -15,7 +15,8 @@ const sendEmail = ({name, email, whatsapp, message}: prop) => {
       message: message,
   };
 
-
+  if(publicKey && serviceId && templateId){
+    
     emailjs
     .send(serviceId, templateId, templateParams, publicKey)
     .then((response) => {
@@ -24,6 +25,7 @@ const sendEmail = ({name, email, whatsapp, message}: prop) => {
     .catch((error) => {
       console.error("Error sending email:", error);
     });
+  }
 }
 
 export default sendEmail
