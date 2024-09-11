@@ -5,7 +5,7 @@ import styled from "styled-components"
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 15rem;
+    width: 25rem;
     border: 2px solid gray;
     padding: 0.3rem;
     border-radius: 0.5rem;
@@ -45,5 +45,9 @@ export const Container = styled.div`
             font-size: 12px;
             cursor: default;
         }
+    }
+
+    @media (min-width: 700px) {
+        width: 15rem;
     }
 `

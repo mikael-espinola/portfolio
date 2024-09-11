@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Container, Loader } from "./style";
+import { Container, Loader, Title } from "./style";
 import ProjectCard from "../projectCard/ProjectCard";
 
 export interface Data {
@@ -37,13 +37,17 @@ const Projects = () => {
   }, []);
 
   return (
-    <Container>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        repositories && repositories.map((repo) => <ProjectCard data={repo} />)
-      )}
-    </Container>
+    <>
+      <Title>Projetos</Title>
+      <Container>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          repositories &&
+          repositories.map((repo) => <ProjectCard data={repo} />)
+        )}
+      </Container>
+    </>
   );
 };
 

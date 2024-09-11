@@ -3,13 +3,25 @@
 import { FiLoader } from "react-icons/fi"
 import styled, { keyframes } from "styled-components"
 
+export const Title = styled.h1`
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 1rem;
+  cursor: default;
+`
+
 export const Container = styled.div`
     display: flex;
-    padding: 0 5rem;
+    padding: 0 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 1rem;
+
+    @media (min-width: 700px) {
+      justify-content: center;
+      padding: 0 5rem;
+    }
+
 `
 
 const rotate = keyframes`
