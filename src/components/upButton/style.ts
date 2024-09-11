@@ -8,7 +8,7 @@ export const Container = styled.button<Prop>`
     visibility: ${({$show}) => $show === true ? "hidden" : "visible"};
     bottom: .5rem;
     right: 0 ;
-    right: 5rem;
+    right: 1rem;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -16,6 +16,10 @@ export const Container = styled.button<Prop>`
     border: none;
     border-radius: 5rem;
     outline: none;
+
+    @media (min-width: 970px) {
+        right: 4rem;
+    }
 
     &:focus {
         outline: 1px solid #fff;
