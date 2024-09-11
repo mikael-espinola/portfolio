@@ -9,7 +9,19 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 const LinkButton = ({ hRef, text, ...rest }: Props) => {
   return (
     <Container href={hRef ? hRef : "/"}>
-      {text ? text : <Title>Mikael Espínola</Title>}
+      {text ? (
+        text
+      ) : text === "curriculo" ? (
+        <a
+          download="CV_Mikael_Espinola.pdf"
+          href={hRef}
+          rel="noopener noreferrer"
+        >
+          {text}
+        </a>
+      ) : (
+        <Title>Mikael Espínola</Title>
+      )}
     </Container>
   );
 };

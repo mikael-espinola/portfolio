@@ -12,6 +12,10 @@ export const Container = styled(Link)`
         position: relative;
         font-size: 14px;
 
+        a {
+                text-decoration: none;
+        }
+
         &:hover{
                 &::after {
                         content: '';
