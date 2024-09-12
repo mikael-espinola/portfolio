@@ -39,7 +39,7 @@ const Projects = () => {
   return (
     <>
       <Title>Projetos</Title>
-      <Container>
+      <Container isLoading={isLoading}>
         {isLoading ? (
           <Loader />
         ) : (

@@ -3,6 +3,10 @@
 import { FiLoader } from "react-icons/fi"
 import styled, { keyframes } from "styled-components"
 
+interface props {
+  isLoading: boolean
+}
+
 export const Title = styled.h1`
   font-size: 40px;
   text-align: center;
@@ -10,8 +14,10 @@ export const Title = styled.h1`
   cursor: default;
 `
 
-export const Container = styled.div`
+export const Container = styled.div<props>`
     display: flex;
+justify-content: ${({isLoading}) => isLoading ? 'center' : 'none'};
+
     padding: 0 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
