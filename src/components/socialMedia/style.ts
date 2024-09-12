@@ -16,7 +16,7 @@ export const Container = styled.nav`
 
 export const SocialMediaLink = styled(Link)<Props>`
    svg {
-      color: ${({$type}) => $type === "whatsapp" ? 'green' : $type === "linkedin" ? "blue" : $type === "github" ? "black" : $type === "gmail" && "red" };
+      color: ${({$type}) => $type === "whatsapp" ? 'green' : $type === "linkedin" ? "blue" : $type === "github" ? "white" : $type === "gmail" && "red" };
       font-size: 24px;
    }
 `
