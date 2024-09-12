@@ -42,7 +42,7 @@ export const Container = styled.div`
     .description {
         padding: .6rem 0 0 .2rem;
         p {
-            font-size: 12px;
+            font-size: 14px;
             cursor: default;
         }
     }
