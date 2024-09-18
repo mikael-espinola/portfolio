@@ -4,6 +4,7 @@ import StyledComponentsRegistry from "@/lib/registry";
 import { GlobalStyles } from "./globalStyles";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import { RefProvider } from "@/backend/contextApi/RefContext";
 
 const OpenSans = Open_Sans({ subsets: ["latin"] });
 
@@ -17,15 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <StyledComponentsRegistry>
-      <html lang="en">
-        <body className={OpenSans.className}>
-          <Header />
-          {children}
-          {/* <Footer /> */}
-        </body>
-      </html>
-      <GlobalStyles />
-    </StyledComponentsRegistry>
+    <RefProvider>
+      <StyledComponentsRegistry>
+        <html lang="en">
+          <body className={OpenSans.className}>
+            <Header />
+            {children}
+            <Footer />
+          </body>
+        </html>
+        <GlobalStyles />
+      </StyledComponentsRegistry>
+    </RefProvider>
   );
 }

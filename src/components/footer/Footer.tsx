@@ -1,12 +1,12 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Label } from "./style";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <Container>
       <div className="rights-container">
-        <label>{currentYear} | All rights reserved.</label>
+        <Label>© {currentYear} | Mikael Espínola</Label>
       </div>
     </Container>
   );

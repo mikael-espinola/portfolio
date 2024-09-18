@@ -14,7 +14,7 @@ const LinkButton = ({ hRef, text, ...rest }: Props) => {
       ) : text === "curriculo" ? (
         <a
           download="CV_Mikael_Espinola.pdf"
-          href={hRef}
+          href={hRef && hRef}
           rel="noopener noreferrer"
         >
           {text}

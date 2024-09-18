@@ -11,3 +11,7 @@ justify-content: center;
 align-items: center;
   
 `
+
+export const Label = styled.label`
+    font-size: 12px;
+`
