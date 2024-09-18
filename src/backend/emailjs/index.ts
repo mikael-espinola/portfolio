@@ -19,9 +19,7 @@ const sendEmail = ({name, email, whatsapp, message}: prop) => {
     
     emailjs
     .send(serviceId, templateId, templateParams, publicKey)
-    .then((response) => {
-      console.log("Email sent successfully!", response);
-    })
+    
     .catch((error) => {
       console.error("Error sending email:", error);
     });

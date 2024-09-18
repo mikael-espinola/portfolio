@@ -11,12 +11,16 @@ import {
   MessageField,
   Title,
 } from "./style";
+import { useRefContext } from "@/contextApi/RefComponentsContext";
+import { useLangContext } from "@/contextApi/LangProvider";
 
 const Form = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [message, setMessage] = useState("");
+  const { formsRef } = useRefContext();
+  const { lang } = useLangContext();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,15 +38,17 @@ const Form = () => {
   };
   return (
     <>
-      <Title>Entre em contato</Title>
+      <Title ref={formsRef}>
+        {lang === "en" ? "Contact me" : "Entre em contato"}
+      </Title>
       <FormBox onSubmit={handleSubmit}>
-        <Label htmlFor="name">Nome</Label>
+        <Label htmlFor="name">{lang === "en" ? "Name" : "Nome"}</Label>
         <Input
           id="name"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Digite seu nome"
+          placeholder={lang === "en" ? "Enter your name" : "Digite seu nome"}
           required
         />
         <Label htmlFor="email">E-mail</Label>
@@ -51,7 +57,9 @@ const Form = () => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Digite seu email"
+          placeholder={
+            lang === "en" ? "Enter your e-mail" : "Digite seu e-mail"
+          }
           required
         />
         <Label htmlFor="whatsapp">Whatsapp</Label>
@@ -60,17 +68,29 @@ const Form = () => {
           type="tel"
           value={whatsapp}
           onChange={(e) => setWhatsapp(e.target.value)}
-          placeholder="Digite seu whatsapp com DDD"
+          placeholder={
+            lang === "en"
+              ? "Enter your complete whatsapp number"
+              : "Digite seu whatsapp com DDD"
+          }
         />
-        <Label htmlFor="mensagem">Mensagem</Label>
+        <Label htmlFor="mensagem">
+          {lang === "en" ? "Message" : "Mensagem"}
+        </Label>
         <MessageField
           id="mensagem"
-          placeholder="Digite sua mensagem aqui..."
+          placeholder={
+            lang === "en"
+              ? "Enter your message here"
+              : "Digite sua mensagem aqui"
+          }
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
         <ButtonContainer>
-          <Button type="submit">Entrar em contato</Button>
+          <Button type="submit">
+            {lang === "en" ? "Send message" : "Entrar em contato"}
+          </Button>
         </ButtonContainer>
       </FormBox>
     </>

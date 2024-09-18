@@ -11,15 +11,6 @@ const SocialMedia = () => {
   return (
     <Container>
       <SocialMediaLink
-        $type="whatsapp"
-        href="https://wa.me/5584998995683"
-        aria-label="Whatsapp"
-        title="Whatsapp"
-        target="_blank"
-      >
-        <FaWhatsapp />
-      </SocialMediaLink>
-      <SocialMediaLink
         aria-label="GitHub"
         title="GitHub"
         target="_blank"

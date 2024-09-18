@@ -3,7 +3,26 @@
 import Link from "next/link"
 import styled from "styled-components"
 
-export const Container = styled(Link)`
+interface prop {
+        text: string | undefined
+}
+
+const buttonDecoration = () => {
+        return (
+               ` &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: #ffaa00;
+                        animation: ExpandWidth .2s forwards;
+                }`
+        )
+}
+
+export const Container = styled(Link)<prop>`
         text-decoration: none;
         color: #fff;
         cursor: pointer;
@@ -16,6 +35,8 @@ export const Container = styled(Link)`
                 text-decoration: none;
         }
 
+        ${({text}) => text !== undefined && buttonDecoration()}
+
         &:hover{
                 &::after {
                         content: '';
@@ -24,7 +45,7 @@ export const Container = styled(Link)`
                         left: 0;
                         width: 0;
                         height: 2px;
-                        background-color: yellow;
+                        background-color: #ffaa00;
                         animation: ExpandWidth .2s forwards;
                 }
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Title = styled.h1`
   text-align: center;
-  margin-top: 15rem;
+  padding-top: 5rem;
 `;
 
 export const FormBox = styled.form`
@@ -62,6 +62,7 @@ export const Button = styled.button`
   cursor: pointer;
   border-radius: 8px;
   border: none;
-  background-color: #9f7304;
-  color: #fff;
+  background-color: #ffaa00;
+  color: black;
+  font-weight: 600;
 `;

@@ -8,9 +8,10 @@ import { VscLinkExternal } from "react-icons/vsc";
 
 interface Props {
   data: Data;
+  lang: string;
 }
 
-const ProjectCard = ({ data }: Props) => {
+const ProjectCard = ({ data, lang }: Props) => {
   return (
     <Container>
       <div className="image">
@@ -34,7 +35,11 @@ const ProjectCard = ({ data }: Props) => {
         </Link>
       </div>
       <div className="description">
-        <p>{data.description_PT}</p>
+        {lang === "en" ? (
+          <p>{data.description_EN}</p>
+        ) : (
+          <p>{data.description_PT}</p>
+        )}
       </div>
     </Container>
   );

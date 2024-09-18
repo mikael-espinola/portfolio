@@ -28,3 +28,10 @@ export const Title = styled.h4`
     font-size: 40px;
     margin-top: 1.5rem;
 `
+
+export const LangButtonBox = styled.div`
+    display: flex;
+    position: absolute;
+    left: 2rem;
+    top: 5.5;
+`

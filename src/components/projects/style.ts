@@ -10,7 +10,7 @@ interface props {
 export const Title = styled.h1`
   font-size: 40px;
   text-align: center;
-  margin-bottom: 1rem;
+  padding: 5rem 0 1rem ;
   cursor: default;
 `
 

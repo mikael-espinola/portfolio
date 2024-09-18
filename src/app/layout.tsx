@@ -4,11 +4,13 @@ import StyledComponentsRegistry from "@/lib/registry";
 import { GlobalStyles } from "./globalStyles";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import RefProvider from "@/contextApi/RefComponentsContext";
+import LangProvider from "@/contextApi/LangProvider";
 
 const OpenSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfólio: Mikael",
+  title: "Portfolio: Mikael",
 };
 
 export default function RootLayout({
@@ -20,9 +22,13 @@ export default function RootLayout({
     <StyledComponentsRegistry>
       <html lang="en">
         <body className={OpenSans.className}>
-          <Header />
-          {children}
-          <Footer />
+          <LangProvider>
+            <RefProvider>
+              <Header />
+              {children}
+              <Footer />
+            </RefProvider>
+          </LangProvider>
         </body>
       </html>
       <GlobalStyles />

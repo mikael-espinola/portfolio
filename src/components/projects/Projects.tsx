@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Loader, Title } from "./style";
 import ProjectCard from "../projectCard/ProjectCard";
+import { useRefContext } from "@/contextApi/RefComponentsContext";
+import { useLangContext } from "@/contextApi/LangProvider";
 
 export interface Data {
   id: number;
@@ -23,12 +25,13 @@ export interface FetchProp {
 const Projects = () => {
   const [repositories, setRepositories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { projectsRef } = useRefContext();
+  const { lang } = useLangContext();
 
   useEffect(() => {
     const fetchProjects = async () => {
       const response = await fetch("/api/repositories");
       const data = await response.json();
-      console.log(data);
       setRepositories(data);
       setIsLoading(false);
     };
@@ -38,13 +41,15 @@ const Projects = () => {
 
   return (
     <>
-      <Title>Projetos</Title>
+      <Title ref={projectsRef}>{lang === "en" ? "Projects" : "Projetos"}</Title>
       <Container isLoading={isLoading}>
         {isLoading ? (
           <Loader />
         ) : (
           repositories &&
-          repositories.map((repo) => <ProjectCard data={repo} />)
+          repositories.map((repo, index) => (
+            <ProjectCard lang={lang} data={repo} key={index} />
+          ))
         )}
       </Container>
     </>

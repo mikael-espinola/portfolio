@@ -8,7 +8,7 @@ interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 const LinkButton = ({ hRef, text, ...rest }: Props) => {
   return (
-    <Container href={hRef ? hRef : "/"}>
+    <Container text={text} href={hRef ? hRef : "/"}>
       {text ? (
         text
       ) : text === "curriculo" ? (
