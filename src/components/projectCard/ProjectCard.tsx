@@ -1,6 +1,12 @@
 import React from "react";
-import { Container } from "./style";
-import Image from "next/image";
+import {
+  Container,
+  Description,
+  ImageBox,
+  ImageItem,
+  InfoBox,
+  Paragraph,
+} from "./style";
 import { Data } from "../projects/Projects";
 import Link from "next/link";
 
@@ -14,16 +20,16 @@ interface Props {
 const ProjectCard = ({ data, lang }: Props) => {
   return (
     <Container>
-      <div className="image">
-        <Image
+      <ImageBox className="image">
+        <ImageItem
           alt="project poster"
           width={1600}
           height={900}
           src={`${data.image}`}
         />
-      </div>
-      <div className="info">
-        <h3>{data.name}</h3>
+      </ImageBox>
+      <InfoBox>
+        <Paragraph>{data.name}</Paragraph>
         <Link
           href={data.html_url}
           target="_blank "
@@ -33,14 +39,14 @@ const ProjectCard = ({ data, lang }: Props) => {
         >
           <VscLinkExternal color="#fff" />
         </Link>
-      </div>
-      <div className="description">
+      </InfoBox>
+      <Description>
         {lang === "en" ? (
           <p>{data.description_EN}</p>
         ) : (
           <p>{data.description_PT}</p>
         )}
-      </div>
+      </Description>
     </Container>
   );
 };

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image"
 import styled from "styled-components"
 
 export const Container = styled.div`
@@ -16,38 +17,39 @@ export const Container = styled.div`
         color: black;
     }
 
-    .image {
-        width: 100%;
-        height: 8rem;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .info {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-top: .6rem;
-
-        > h3 {
-            text-transform: capitalize;
-            cursor: default;
-        }
-    }
-
-    .description {
-        padding: .6rem 0 0 .2rem;
-        p {
-            font-size: 14px;
-            cursor: default;
-        }
-    }
-
     @media (min-width: 700px) {
         width: 15rem;
     }
+`
+
+export const Description = styled.div`
+    padding: .6rem 0 0 .2rem;
+`
+
+export const Paragraph = styled.p`
+    font-size: 14px;
+    cursor: default;
+`
+
+export const ImageBox = styled.div`
+    width: 100%;
+    height: 8rem;
+`
+
+export const ImageItem = styled(Image)`
+    width: 100%;
+            height: 100%;
+            object-fit: cover;
+`
+
+export const InfoBox = styled.div`
+    display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: .6rem;
+`
+
+export const Text = styled.h3`
+    text-transform: capitalize;
+    cursor: default;
 `

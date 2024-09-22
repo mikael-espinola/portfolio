@@ -15,3 +15,7 @@ align-items: center;
 export const Label = styled.label`
     font-size: 12px;
 `
+
+export const RightsBox = styled.div`
+
+`

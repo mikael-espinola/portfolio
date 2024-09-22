@@ -1,13 +1,13 @@
 import React from "react";
-import { Container, Label } from "./style";
+import { Container, Label, RightsBox } from "./style";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <Container>
-      <div className="rights-container">
+      <RightsBox>
         <Label>© {currentYear} | Mikael Espínola</Label>
-      </div>
+      </RightsBox>
     </Container>
   );
 };
