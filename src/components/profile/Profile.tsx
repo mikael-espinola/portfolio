@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "./style";
 import Image from "next/image";
-// import Picture from "";
 import SocialMedia from "../socialMedia/SocialMedia";
 
 const Profile = () => {
