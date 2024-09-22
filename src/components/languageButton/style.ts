@@ -15,8 +15,9 @@ export const Container = styled.button`
     border: none;
     font-size: 14px;
 
-    &:hover {
-        background-color: yellow;
-    }
+   &:active {
+    outline: 1px solid white;
+    outline-offset: 2px;
+   }
     
 `

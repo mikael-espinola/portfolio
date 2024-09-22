@@ -9,7 +9,9 @@ const LangButton = () => {
   const handleButton = (): void => {
     setLang(() => (lang === "en" ? "pt" : "en"));
   };
-  return <Container onClick={handleButton}>{lang}</Container>;
+  return (
+    <Container onClick={handleButton}>{lang === "en" ? "pt" : "en"}</Container>
+  );
 };
 
 export default LangButton;
