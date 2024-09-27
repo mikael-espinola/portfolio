@@ -21,7 +21,7 @@ export const Container = styled.button<Prop>`
         right: 4rem;
     }
 
-    &:focus {
+    &:active {
         outline: 1px solid #fff;
     }
     svg {
