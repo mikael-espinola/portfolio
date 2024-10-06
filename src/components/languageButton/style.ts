@@ -16,8 +16,12 @@ export const Container = styled.button`
     font-size: 14px;
 
    &:active {
-    outline: 1px solid white;
-    outline-offset: 2px;
+    @media (min-width: 768px) {
+        outline: 1px solid white;
+        outline-offset: 2px;
+
+        }
+    
    }
     
 `

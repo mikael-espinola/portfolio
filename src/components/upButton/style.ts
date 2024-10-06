@@ -22,7 +22,10 @@ export const Container = styled.button<Prop>`
     }
 
     &:active {
-        outline: 1px solid #fff;
+        @media (min-width: 768px) {
+            outline: 1px solid #fff;
+
+        }
     }
     svg {
         font-size: 48px;
