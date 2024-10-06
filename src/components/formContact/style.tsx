@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
+
 export const Title = styled.h1`
   text-align: center;
   padding-top: 5rem;
@@ -8,18 +14,13 @@ export const Title = styled.h1`
 export const FormBox = styled.form`
   display: flex;
   flex-direction: column;
-
+  width: 100%;
   padding: 1rem;
   gap: 0.5rem;
   margin-bottom: 15rem;
 
   @media (min-width: 700px) {
-    padding: 1rem 5rem;
-    margin-bottom: 15rem;
-  }
-  @media (min-width: 900px) {
-    padding: 1rem 25rem;
-    margin-bottom: 15rem;
+    width: 50%;
   }
 `;
 

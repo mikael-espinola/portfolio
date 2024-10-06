@@ -5,6 +5,7 @@ import React, { FormEvent, useState } from "react";
 import {
   Button,
   ButtonContainer,
+  Container,
   FormBox,
   Input,
   Label,
@@ -37,7 +38,7 @@ const Form = () => {
     setMessage("");
   };
   return (
-    <>
+    <Container>
       <Title ref={formsRef}>
         {lang === "en" ? "Contact me" : "Entre em contato"}
       </Title>
@@ -93,7 +94,7 @@ const Form = () => {
           </Button>
         </ButtonContainer>
       </FormBox>
-    </>
+    </Container>
   );
 };
 
