@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Container, Loader, Title } from "./style";
+import { Container, List, Loader, Title } from "./style";
 import ProjectCard from "../projectCard/ProjectCard";
 import { useRefContext } from "@/contextApi/RefComponentsContext";
 import { useLangContext } from "@/contextApi/LangProvider";
@@ -43,14 +43,16 @@ const Projects = () => {
     <>
       <Title ref={projectsRef}>{lang === "en" ? "Projects" : "Projetos"}</Title>
       <Container isLoading={isLoading}>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          repositories &&
-          repositories.map((repo, index) => (
-            <ProjectCard lang={lang} data={repo} key={index} />
-          ))
-        )}
+        <List>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            repositories &&
+            repositories.map((repo, index) => (
+              <ProjectCard lang={lang} data={repo} key={index} />
+            ))
+          )}
+        </List>
       </Container>
     </>
   );

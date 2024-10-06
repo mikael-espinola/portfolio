@@ -12,12 +12,13 @@ export const Title = styled.h1`
   text-align: center;
   padding: 5rem 0 1rem ;
   cursor: default;
+
 `
 
 export const Container = styled.div<props>`
     display: flex;
-justify-content: ${({isLoading}) => isLoading ? 'center' : 'none'};
-
+    justify-content: ${({isLoading}) => isLoading ? 'center' : 'none'};
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 2rem;
     flex-wrap: wrap;
@@ -45,4 +46,12 @@ export const Loader = styled(FiLoader)`
   animation: ${rotate} 2s linear infinite;  
   font-size: 48px;
  
+`
+
+export const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2em;
+  justify-content: center;
 `

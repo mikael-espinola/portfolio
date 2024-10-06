@@ -1,16 +1,20 @@
 import React from "react";
 import {
-  Container,
   Description,
-  ImageBox,
-  ImageItem,
-  InfoBox,
-  Paragraph,
+  Card,
+  Techs,
+  TechsContainer,
+  DescriptionContainer,
+  Button,
+  LinkContainer,
+  Flip,
+  FaceCard,
+  BackCard,
+  CardTitleContainer,
+  CardTitle,
+  TechTitle,
 } from "./style";
 import { Data } from "../projects/Projects";
-import Link from "next/link";
-
-import { VscLinkExternal } from "react-icons/vsc";
 
 interface Props {
   data: Data;
@@ -19,35 +23,46 @@ interface Props {
 
 const ProjectCard = ({ data, lang }: Props) => {
   return (
-    <Container>
-      <ImageBox className="image">
-        <ImageItem
-          alt="project poster"
-          width={1600}
-          height={900}
-          src={`${data.image}`}
-        />
-      </ImageBox>
-      <InfoBox>
-        <Paragraph>{data.name}</Paragraph>
-        <Link
-          href={data.html_url}
-          target="_blank "
-          rel="noopener noreferrer"
-          title="Repositório no gitHub"
-          aria-label="Acesse o repositório no Github"
-        >
-          <VscLinkExternal color="#fff" />
-        </Link>
-      </InfoBox>
-      <Description>
-        {lang === "en" ? (
-          <p>{data.description_EN}</p>
-        ) : (
-          <p>{data.description_PT}</p>
-        )}
-      </Description>
-    </Container>
+    <Card key={data.id}>
+      <Flip>
+        <FaceCard image_url={`${data.image}`}>
+          <CardTitleContainer>
+            <CardTitle>{data.name}</CardTitle>
+          </CardTitleContainer>
+        </FaceCard>
+        <BackCard>
+          <DescriptionContainer>
+            <Description>
+              {lang === "EN" ? data.description_EN : data.description_PT}
+            </Description>
+          </DescriptionContainer>
+          <LinkContainer>
+            <Button
+              href={data.homepage}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Deploy
+            </Button>
+            <Button
+              href={data.html_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </Button>
+          </LinkContainer>
+          <TechsContainer>
+            <TechTitle>Techs: </TechTitle>
+            {data.techs.map((tech, index) => (
+              <Techs key={index} color="">
+                {tech}
+              </Techs>
+            ))}
+          </TechsContainer>
+        </BackCard>
+      </Flip>
+    </Card>
   );
 };
 

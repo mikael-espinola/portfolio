@@ -9,7 +9,7 @@ import LangProvider from "@/contextApi/LangProvider";
 
 const OpenSans = Open_Sans({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Portfolio: Mikael",
 };
 
