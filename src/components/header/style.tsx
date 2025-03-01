@@ -69,10 +69,12 @@ export const Button = styled.button`
 
   @keyframes ExpandWidth {
     from {
-      width: 0%; /* Início da animação */
+      width: 0%;
     }
     to {
-      width: 100%; /* Final da animação */
+      width: 100%;
     }
   }
 `;
+
+export const Link = styled(Button).attrs({ as: "a" })``;
