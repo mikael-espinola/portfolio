@@ -1,3 +1,4 @@
+"use client";
 import React, { AnchorHTMLAttributes } from "react";
 import { Container, Title } from "./style";
 
