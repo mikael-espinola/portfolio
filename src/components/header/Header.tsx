@@ -7,7 +7,7 @@ import { useRefContext } from "@/contextApi/RefComponentsContext";
 import { useLangContext } from "@/contextApi/LangProvider";
 
 const Header = () => {
-  const link = "/assets/files/download/CV_Mikael_Espinola.pdf";
+  const link = "/files/download/CV_Mikael_Espinola.pdf";
   const { projectsRef, formsRef, homeRef } = useRefContext();
   const { lang } = useLangContext();
 
