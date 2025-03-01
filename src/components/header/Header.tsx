@@ -38,7 +38,7 @@ const Header = () => {
           {" "}
           {lang === "en" ? "Contact" : "Contato"}
         </Button>
-        <LinkButton hRef={link} text={lang === "en" ? "Resume" : "CV"} />
+        <a href={link}>{lang === "en" ? "Resume" : "CV"}</a>
       </LinkBox>
     </Container>
   );
