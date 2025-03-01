@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Button, Container, LinkBox } from "./style";
+import { Button, Container, Link, LinkBox } from "./style";
 import LinkButton from "../linkButton/LinkButton";
 import { useRefContext } from "@/contextApi/RefComponentsContext";
 import { useLangContext } from "@/contextApi/LangProvider";
@@ -38,7 +38,9 @@ const Header = () => {
           {" "}
           {lang === "en" ? "Contact" : "Contato"}
         </Button>
-        <a href={link}>{lang === "en" ? "Resume" : "CV"}</a>
+        <Link rel="noopner noreferrer" target="_blank" href={link}>
+          {lang === "en" ? "Resume" : "CV"}
+        </Link>
       </LinkBox>
     </Container>
   );
