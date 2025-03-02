@@ -5,6 +5,8 @@ import { Button, Container, Link, LinkBox } from "./style";
 import LinkButton from "../linkButton/LinkButton";
 import { useRefContext } from "@/contextApi/RefComponentsContext";
 import { useLangContext } from "@/contextApi/LangProvider";
+import LangButton from "../languageButton/LangButton";
+import { TbFileCv } from "react-icons/tb";
 
 const Header = () => {
   const link = "./files/download/CV_Mikael_Espinola.pdf";
@@ -38,9 +40,15 @@ const Header = () => {
           {" "}
           {lang === "en" ? "Contact" : "Contato"}
         </Button>
-        <Link rel="noopner noreferrer" target="_blank" href={link}>
-          {lang === "en" ? "Resume" : "CV"}
+        <Link
+          title="curriculum vitae résumé"
+          rel="noopner noreferrer"
+          target="_blank"
+          href={link}
+        >
+          <TbFileCv />
         </Link>
+        <LangButton />
       </LinkBox>
     </Container>
   );
