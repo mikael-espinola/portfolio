@@ -8,7 +8,6 @@ import {
   Title,
 } from "./style";
 import { PiHandWavingFill } from "react-icons/pi";
-import LangButton from "../languageButton/LangButton";
 
 interface Props {
   lang: string;
@@ -17,9 +16,6 @@ interface Props {
 const Description = ({ lang }: Props) => {
   return (
     <Container>
-      <LangButtonBox>
-        <LangButton />
-      </LangButtonBox>
       {lang === "en" ? (
         <Heading>
           <Title>

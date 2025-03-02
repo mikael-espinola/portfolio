@@ -41,6 +41,7 @@ export const LinkBox = styled.nav`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 `;
 
 export const Button = styled.button`
@@ -77,4 +78,12 @@ export const Button = styled.button`
   }
 `;
 
-export const Link = styled(Button).attrs({ as: "a" })``;
+export const Link = styled(Button).attrs({ as: "a" })`
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+
+  svg {
+    font-size: 20px;
+  }
+`;
