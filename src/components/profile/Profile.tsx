@@ -11,6 +11,7 @@ const Profile = () => {
           width={240}
           height={240}
           src="/assets/images/profile/Profile.png"
+          priority
         />
       </Box>
       <ConnectionsBox>
