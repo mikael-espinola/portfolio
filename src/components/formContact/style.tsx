@@ -101,6 +101,6 @@ export const LabelItem = styled.label`
 `;
 
 export const MessageField = styled(InputItem).attrs({ as: "textarea" })`
-  min-height: 4rem;
   max-width: 100%;
+  display: flex;
 `;
