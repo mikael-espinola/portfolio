@@ -25,7 +25,7 @@ const ProjectCard = ({ data, lang }: Props) => {
   return (
     <Card key={data.id}>
       <Flip>
-        <FaceCard image_url={`${data.image}`}>
+        <FaceCard $image_url={`${data.image}`}>
           <CardTitleContainer>
             <CardTitle>{data.name}</CardTitle>
           </CardTitleContainer>

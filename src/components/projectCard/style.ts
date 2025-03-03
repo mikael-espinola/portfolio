@@ -1,9 +1,9 @@
-'use client'
+"use client";
 import { url } from "inspector";
 import styled from "styled-components";
 
 interface Props {
-  image_url: string;
+  $image_url: string;
 }
 
 export const Flip = styled.div`
@@ -15,28 +15,24 @@ export const Flip = styled.div`
 `;
 
 export const Card = styled.li`
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 15em;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 15em;
 
-    @media (min-width: 700px) and (max-width: 1680px) {
-        width: 17rem;
-        height: 10rem;
-    }
+  @media (min-width: 700px) and (max-width: 1680px) {
+    width: 17rem;
+    height: 10rem;
+  }
 
-    @media (min-width: 1681px) {
-        width: 25rem; 
-        height: 15rem; 
-    }
+  @media (min-width: 1681px) {
+    width: 25rem;
+    height: 15rem;
+  }
 
-    
-
-    &:hover ${Flip} {
-        transform: rotateY(180deg);
-    }
-
-    
+  &:hover ${Flip} {
+    transform: rotateY(180deg);
+  }
 `;
 
 export const BaseCard = styled.div`
@@ -48,7 +44,7 @@ export const BaseCard = styled.div`
   backface-visibility: hidden;
 `;
 export const FaceCard = styled(BaseCard)<Props>`
-  background-image: url(${(props) => `${props.image_url}`});
+  background-image: url(${(props) => `${props.$image_url}`});
   background-size: cover;
   display: flex;
   justify-content: center;

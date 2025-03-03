@@ -42,7 +42,7 @@ const Projects = () => {
   return (
     <>
       <Title ref={projectsRef}>{lang === "en" ? "Projects" : "Projetos"}</Title>
-      <Container isLoading={isLoading}>
+      <Container $isLoading={isLoading}>
         <List>
           {isLoading ? (
             <Loader />

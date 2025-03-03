@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
 import StyledComponentsRegistry from "@/lib/registry";
 import { GlobalStyles } from "./globalStyles";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import RefProvider from "@/contextApi/RefComponentsContext";
 import LangProvider from "@/contextApi/LangProvider";
+import { Open_Sans } from "next/font/google";
 
-const OpenSans = Open_Sans({ subsets: ["latin"] });
+const openSans = Open_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
 const metadata: Metadata = {
   title: "Portfolio: Mikael",
@@ -15,13 +15,13 @@ const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <StyledComponentsRegistry>
-      <html lang="en">
-        <body className={OpenSans.className}>
+    <html lang="en">
+      <StyledComponentsRegistry>
+        <body className={openSans.className}>
           <LangProvider>
             <RefProvider>
               <Header />
@@ -29,9 +29,9 @@ export default function RootLayout({
               <Footer />
             </RefProvider>
           </LangProvider>
+          <GlobalStyles />
         </body>
-      </html>
-      <GlobalStyles />
-    </StyledComponentsRegistry>
+      </StyledComponentsRegistry>
+    </html>
   );
 }
