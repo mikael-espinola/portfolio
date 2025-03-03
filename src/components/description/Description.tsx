@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Heading,
-  LangButtonBox,
-  Paragraph,
-  Span,
-  Title,
-} from "./style";
+import { Container, Heading, Paragraph, Span, Title } from "./style";
 import { PiHandWavingFill } from "react-icons/pi";
 
 interface Props {
