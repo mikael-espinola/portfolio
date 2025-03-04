@@ -8,7 +8,11 @@ import { useLangContext } from "@/contextApi/LangProvider";
 import LangButton from "../languageButton/LangButton";
 import { TbFileCv } from "react-icons/tb";
 
-const Header = () => {
+interface Props {
+  isRepoPage?: boolean;
+}
+
+const Header = ({ isRepoPage }: Props) => {
   const link = "./files/download/CV_Mikael_Espinola.pdf";
   const { projectsRef, formsRef, homeRef } = useRefContext();
   const { lang } = useLangContext();
@@ -24,32 +28,46 @@ const Header = () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
   return (
-    <Container>
+    <Container $isRepoPage={isRepoPage}>
       <LinkBox>
         <LinkButton />
       </LinkBox>
-      <LinkBox>
-        <Button onClick={scrollToUp}>
-          {lang === "en" ? "Home" : "Início"}
-        </Button>
-        <Button onClick={() => handleRef(projectsRef)}>
-          {" "}
-          {lang === "en" ? "Projects" : "Projetos"}
-        </Button>
-        <Button onClick={() => handleRef(formsRef)}>
-          {" "}
-          {lang === "en" ? "Contact" : "Contato"}
-        </Button>
-        <Link
-          title="curriculum vitae résumé"
-          rel="noopner noreferrer"
-          target="_blank"
-          href={link}
-        >
-          <TbFileCv />
-        </Link>
-        <LangButton />
-      </LinkBox>
+      {!isRepoPage ? (
+        <LinkBox>
+          <Button onClick={scrollToUp}>
+            {lang === "en" ? "Home" : "Início"}
+          </Button>
+          <Button onClick={() => handleRef(projectsRef)}>
+            {" "}
+            {lang === "en" ? "Projects" : "Projetos"}
+          </Button>
+          <Button onClick={() => handleRef(formsRef)}>
+            {" "}
+            {lang === "en" ? "Contact" : "Contato"}
+          </Button>
+          <Link
+            title="curriculum vitae résumé"
+            rel="noopner noreferrer"
+            target="_blank"
+            href={link}
+          >
+            <TbFileCv />
+          </Link>
+          <LangButton />
+        </LinkBox>
+      ) : (
+        <LinkBox>
+          <Link
+            title="curriculum vitae résumé"
+            rel="noopner noreferrer"
+            target="_blank"
+            href={link}
+          >
+            <TbFileCv />
+          </Link>
+          <LangButton />
+        </LinkBox>
+      )}
     </Container>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 
 import styled from "styled-components";
-import { Button } from "../header/style";
 
 export const Container = styled.button`
   background: none;
