@@ -3,11 +3,7 @@ import Projects, { Data } from "@/components/projects/Projects";
 import React from "react";
 import { Container } from "./style";
 
-interface Props {
-  data: Data;
-}
-
-const page = ({ data }: Props) => {
+const page = () => {
   return (
     <Container>
       <Header isRepoPage />
