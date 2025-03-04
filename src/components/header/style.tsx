@@ -2,7 +2,11 @@
 
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface IProps {
+  $isRepoPage?: boolean;
+}
+
+export const Container = styled.div<IProps>`
   display: flex;
   justify-content: space-between;
   padding: 1rem 5rem;

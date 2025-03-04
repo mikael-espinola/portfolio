@@ -24,7 +24,6 @@ export default function RootLayout({
         <body className={openSans.className}>
           <LangProvider>
             <RefProvider>
-              <Header />
               {children}
               <Footer />
             </RefProvider>

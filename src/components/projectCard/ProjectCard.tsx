@@ -34,7 +34,13 @@ const ProjectCard = ({ data, lang }: Props) => {
   return (
     <Card key={data.id}>
       <ImageWrapper>
-        <Image alt="" src={data.image} fill style={{ objectFit: "cover" }} />
+        <Image
+          alt=""
+          src={data.image}
+          fill
+          sizes="100%"
+          style={{ objectFit: "cover" }}
+        />
       </ImageWrapper>
       <CardTitle>{data.name}</CardTitle>
       <Description>
