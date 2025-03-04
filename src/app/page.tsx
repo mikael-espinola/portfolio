@@ -10,7 +10,7 @@ export default function Home() {
     <Container>
       <DevInfo />
       <Techs />
-      <Projects />
+      <Projects threeFirst />
       <Form />
       <UpButton />
     </Container>
