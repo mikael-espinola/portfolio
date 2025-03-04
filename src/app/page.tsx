@@ -5,6 +5,7 @@ import UpButton from "@/components/upButton/UpButton";
 import Form from "@/components/formContact/Form";
 import Techs from "@/components/devInfo/technologies/techs";
 import Header from "@/components/header/Header";
+import Contacts from "@/components/contacts/Contacts";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
       <DevInfo />
       <Techs />
       <Projects threeFirst />
-      <Form />
+      <Contacts />
       <UpButton />
     </Container>
   );

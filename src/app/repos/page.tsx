@@ -1,6 +1,7 @@
 import Header from "@/components/header/Header";
 import Projects, { Data } from "@/components/projects/Projects";
 import React from "react";
+import { Container } from "./style";
 
 interface Props {
   data: Data;
@@ -8,10 +9,10 @@ interface Props {
 
 const page = ({ data }: Props) => {
   return (
-    <div>
+    <Container>
       <Header isRepoPage />
       <Projects />
-    </div>
+    </Container>
   );
 };
 

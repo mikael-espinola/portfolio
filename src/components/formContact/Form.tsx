@@ -52,9 +52,6 @@ const Form = () => {
   };
   return (
     <Container>
-      <Title ref={formsRef}>
-        {lang === "en" ? "Contact me" : "Entre em contato"}
-      </Title>
       <FormBox onSubmit={handleSubmit}>
         <InputWrapper>
           <InputItem
