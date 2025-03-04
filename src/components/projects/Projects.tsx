@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Container, List, Loader, Title } from "./style";
+import { Button, ButtonWrapper, Container, List, Loader, Title } from "./style";
 import ProjectCard from "../projectCard/ProjectCard";
 import { useRefContext } from "@/contextApi/RefComponentsContext";
 import { useLangContext } from "@/contextApi/LangProvider";
+import { useRouter } from "next/navigation";
 
 export interface Data {
   id: number;
@@ -22,17 +23,25 @@ export interface FetchProp {
   error?: string;
 }
 
-const Projects = () => {
+interface Props {
+  threeFirst?: boolean;
+}
+
+const Projects = ({ threeFirst }: Props) => {
   const [repositories, setRepositories] = useState([]);
+  const [threeFirstRepo, setThreeFirstRepo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { projectsRef } = useRefContext();
   const { lang } = useLangContext();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchProjects = async () => {
       const response = await fetch("/api/repositories");
       const data = await response.json();
+      const firstThree = data.slice(0, 3);
       setRepositories(data);
+      setThreeFirstRepo(firstThree);
       setIsLoading(false);
     };
 
@@ -42,18 +51,43 @@ const Projects = () => {
   return (
     <>
       <Title ref={projectsRef}>{lang === "en" ? "Projects" : "Projetos"}</Title>
-      <Container $isLoading={isLoading}>
-        <List>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            repositories &&
-            repositories.map((repo, index) => (
-              <ProjectCard lang={lang} data={repo} key={index} />
-            ))
+      {isLoading ? (
+        <Loader />
+      ) : threeFirst ? (
+        <Container $isLoading={isLoading}>
+          <List $home>
+            {threeFirstRepo &&
+              threeFirstRepo.map((repo, index) => (
+                <ProjectCard lang={lang} data={repo} key={index} />
+              ))}
+          </List>
+          {!isLoading && (
+            <ButtonWrapper>
+              <Button onClick={() => router.push("/repos/")}>
+                {lang === "en" ? "See more" : "Ver mais"}
+              </Button>
+            </ButtonWrapper>
           )}
-        </List>
-      </Container>
+        </Container>
+      ) : (
+        <Container $isLoading={isLoading}>
+          <List>
+            {isLoading ? (
+              <Loader />
+            ) : (
+              repositories &&
+              repositories.map((repo, index) => (
+                <ProjectCard lang={lang} data={repo} key={index} />
+              ))
+            )}
+          </List>
+          <ButtonWrapper>
+            <Button onClick={() => router.push("/")}>
+              {lang === "en" ? "Back" : "Voltar"}
+            </Button>
+          </ButtonWrapper>
+        </Container>
+      )}
     </>
   );
 };
