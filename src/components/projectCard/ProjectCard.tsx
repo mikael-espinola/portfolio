@@ -20,13 +20,15 @@ interface Props {
 }
 
 function formatList(items: string[]) {
+  console.log("total: ", items.length);
   if (items.length === 1) {
     return items[0];
   } else if (items.length === 2) {
     return items.join(" e ");
   } else {
-    const lastItem = items.pop();
-    return items.join(", ") + " e " + lastItem;
+    const lastItem = items[items.length - 1];
+    const remainingItems = items.slice(0, items.length - 1);
+    return remainingItems.join(", ") + " e " + lastItem;
   }
 }
 
