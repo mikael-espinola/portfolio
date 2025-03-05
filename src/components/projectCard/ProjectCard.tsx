@@ -20,7 +20,6 @@ interface Props {
 }
 
 function formatList(items: string[]) {
-  console.log("total: ", items.length);
   if (items.length === 1) {
     return items[0];
   } else if (items.length === 2) {
