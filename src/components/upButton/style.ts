@@ -1,4 +1,5 @@
 'use client'
+import { screen } from "@/style/breakpoints";
 import styled from "styled-components";
 type Prop = {
     $show: boolean
@@ -17,12 +18,12 @@ export const Container = styled.button<Prop>`
     border-radius: 5rem;
     outline: none;
 
-    @media (min-width: 970px) {
+    @media ${screen.large   } {
         right: 4rem;
     }
 
     &:active {
-        @media (min-width: 768px) {
+        @media ${screen.medium} {
             outline: 1px solid #fff;
 
         }

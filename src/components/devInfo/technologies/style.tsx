@@ -1,4 +1,5 @@
 "use client";
+import { screen } from "@/style/breakpoints";
 import styled, { keyframes } from "styled-components";
 
 type Props = {
@@ -13,7 +14,7 @@ export const List = styled.ul`
   grid-template-columns: repeat(3, 1fr);
   gap: 3em;
 
-  @media screen and (min-width: 700px) {
+  @media ${screen.medium} {
     grid-template-columns: repeat(6, 1fr);
     padding: 2.5em;
   }
@@ -52,7 +53,7 @@ export const ListPlus = styled.ul<Props>`
   visibility: ${(props) => (props.$show_list ? "visible" : "hidden")};
   pointer-events: ${(props) => (props.$show_list ? "auto" : "none")};
 
-  @media screen and (min-width: 700px) {
+  @media ${screen.medium} {
     padding: 1em 2.5em;
     grid-template-columns: repeat(6, 1fr);
     margin-top: 0;
@@ -65,7 +66,7 @@ export const Item = styled.li`
   align-items: center;
   font-size: 3em;
 
-  @media screen and (min-width: 950px) {
+  @media ${screen.large} {
     transform: scale(1);
     transition: transform 0.3s;
     &:hover {

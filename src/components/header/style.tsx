@@ -1,5 +1,6 @@
 "use client";
 
+import { screen } from "@/style/breakpoints";
 import styled from "styled-components";
 
 interface IProps {
@@ -23,7 +24,7 @@ export const Container = styled.div<IProps>`
   font-size: 12px;
   z-index: 1;
 
-  @media (max-width: 580px) {
+  @media ${screen.small} {
     padding: 0;
     flex-direction: column;
   }
