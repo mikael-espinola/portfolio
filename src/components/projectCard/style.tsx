@@ -1,11 +1,12 @@
 "use client";
 import styled from "styled-components";
-import techs from "../devInfo/technologies/techs";
+import { screen } from "@/style/breakpoints";
 
 export const Card = styled.li`
   display: flex;
+  align-items: center;
   flex-direction: column;
-  width: 100%;
+  min-width: 100%;
   background-color: #4502922d;
   padding: 0.4rem;
   border-radius: 4px;
@@ -19,9 +20,23 @@ export const CardTitle = styled.h4`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 100%;
-  height: 10rem;
+  width: 18.75rem;
+  height: 9.375rem;
   position: relative;
+  margin-bottom: 1rem;
+
+  @media ${screen.medium} {
+    width: 17.5rem;
+    height: 8.75rem;
+  }
+  @media ${screen.large} {
+    width: 16.25rem;
+    height: 8.125rem;
+  }
+  @media ${screen.xLarge} {
+    width: 22.5rem;
+    height: 11.25rem;
+  }
 `;
 
 export const Description = styled.p`

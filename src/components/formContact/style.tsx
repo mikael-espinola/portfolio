@@ -1,3 +1,4 @@
+import { screen } from "@/style/breakpoints";
 import styled from "styled-components";
 
 interface Props {
@@ -23,7 +24,7 @@ export const FormBox = styled.form`
   gap: 0.5rem;
   margin-bottom: 15rem;
 
-  @media (min-width: 700px) {
+  @media ${screen.medium} {
     width: 50%;
   }
 `;

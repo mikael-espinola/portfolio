@@ -39,8 +39,6 @@ const ProjectCard = ({ data, lang }: Props) => {
           alt=""
           src={data.image}
           fill
-          sizes="100%"
-          style={{ objectFit: "cover" }}
         />
       </ImageWrapper>
       <CardTitle>{data.name}</CardTitle>
@@ -48,7 +46,7 @@ const ProjectCard = ({ data, lang }: Props) => {
         {lang === "en" ? data.description_EN : data.description_PT}
       </Description>
       <TechsWrapper>
-        <TechTitle>Stack</TechTitle>
+        <TechTitle>Stacks:</TechTitle>
         <TechList>
           <TechItem>{formatList(data.techs)}</TechItem>
         </TechList>

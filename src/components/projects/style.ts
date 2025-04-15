@@ -1,5 +1,6 @@
 "use client";
 
+import { screen } from "@/style/breakpoints";
 import { FiLoader } from "react-icons/fi";
 import styled, { keyframes } from "styled-components";
 
@@ -21,7 +22,7 @@ export const Container = styled.div<IProps>`
   flex-direction: column;
   margin-bottom: 2rem;
 
-  @media (min-width: 700px) {
+  @media ${screen.medium} {
     justify-content: center;
     padding: 0 5rem;
   }
@@ -48,17 +49,14 @@ export const Loader = styled(FiLoader)`
 
 export const List = styled.ul<IProps>`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   justify-content: center;
   gap: 0.4rem;
 
-  @media (max-width: 588px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  @media (min-width: 589px) and (max-width: 768px) {
+  @media ${screen.small} {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media (min-width: 1024px) {
+  @media ${screen.large} {
     grid-template-columns: ${(props) =>
       props.$home ? "repeat(3, 1fr)" : "repeat(4, 1fr)"};
   }
