@@ -10,7 +10,7 @@ interface IProps {
 export const Container = styled.div<IProps>`
   display: flex;
   justify-content: space-between;
-  padding: 1rem 5rem;
+  flex-direction: column;
   position: fixed;
   top: 0;
   width: 100%;
@@ -24,9 +24,9 @@ export const Container = styled.div<IProps>`
   font-size: 12px;
   z-index: 1;
 
-  @media ${screen.small} {
-    padding: 0;
-    flex-direction: column;
+  @media ${screen.medium} {
+    flex-direction: row;
+    padding: 1rem 5rem;
   }
 
   a {
@@ -46,7 +46,6 @@ export const LinkBox = styled.nav`
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  flex-wrap: wrap;
 `;
 
 export const Button = styled.button`
