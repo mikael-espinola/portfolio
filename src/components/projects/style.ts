@@ -57,9 +57,7 @@ export const List = styled.ul<IProps>`
     grid-template-columns: repeat(2, 1fr);
   }
   @media ${screen.large} {
-    grid-template-columns: ${(props) =>
-      props.$home ? "repeat(3, 1fr)" : "repeat(4, 1fr)"};
-  }
+    grid-template-columns: repeat(3, 1fr)}
 `;
 
 export const Button = styled.button`
