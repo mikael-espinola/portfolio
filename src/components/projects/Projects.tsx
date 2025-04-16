@@ -16,6 +16,7 @@ export interface Data {
   description_PT: string;
   techs: string[];
   image: string;
+  type?: string;
 }
 
 export interface FetchProp {

@@ -16,6 +16,13 @@ export const Title = styled.h1`
   cursor: default;
 `;
 
+export const Tag = styled.p`
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  font-weight: 700;
+`;
+
 export const Container = styled.div<IProps>`
   display: flex;
   width: 100%;
@@ -57,7 +64,8 @@ export const List = styled.ul<IProps>`
     grid-template-columns: repeat(2, 1fr);
   }
   @media ${screen.large} {
-    grid-template-columns: repeat(3, 1fr)}
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export const Button = styled.button`
