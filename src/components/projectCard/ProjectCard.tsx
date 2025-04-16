@@ -13,6 +13,7 @@ import {
 } from "./style";
 import { Data } from "../projects/Projects";
 import Image from "next/image";
+import { Tag } from "../projects/style";
 
 interface Props {
   data: Data;
@@ -35,13 +36,24 @@ const ProjectCard = ({ data, lang }: Props) => {
   return (
     <Card key={data.id}>
       <ImageWrapper>
-        <Image
-          alt=""
-          src={data.image}
-          fill
-        />
+        <Image alt="" src={data.image} fill />
       </ImageWrapper>
-      <CardTitle>{data.name}</CardTitle>
+      <CardTitle>
+        <>{data.name}</>
+      </CardTitle>
+      <>
+        {data.type === "professional" && lang === "en" ? (
+          <Tag>Professional Project</Tag>
+        ) : data.type === "professional" && lang === "pt" ? (
+          <Tag>Projeto Profissional</Tag>
+        ) : data.type === "personal" && lang === "en" ? (
+          <Tag>Personal Project</Tag>
+        ) : data.type === "personal" && lang === "pt" ? (
+          <Tag>Projeto Pessoal</Tag>
+        ) : (
+          ""
+        )}
+      </>
       <Description>
         {lang === "en" ? data.description_EN : data.description_PT}
       </Description>
@@ -52,11 +64,17 @@ const ProjectCard = ({ data, lang }: Props) => {
         </TechList>
       </TechsWrapper>
       <LinkWrapper>
-        <Link rel="noopener noreferrer" target="_blank" href={data.homepage}>
-          Deploy
-        </Link>
+        {data.homepage !== "" && (
+          <Link rel="noopener noreferrer" target="_blank" href={data.homepage}>
+            Deploy
+          </Link>
+        )}
         <Link rel="noopener noreferrer" target="_blank" href={data.html_url}>
-          GitHub
+          {data.type === "professional" && lang === "en"
+            ? "Explore the official page"
+            : data.type === "professional" && lang === "pt"
+            ? "Explore a página oficial"
+            : "GitHub"}
         </Link>
       </LinkWrapper>
     </Card>
