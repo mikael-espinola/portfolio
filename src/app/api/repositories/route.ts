@@ -3,6 +3,38 @@ import { NextResponse } from "next/server";
 export async function GET() {
   const data = [
     {
+      id: 982374120,
+      name: "comandApp",
+      html_url: "https://test.comandapp.com.br/",
+      homepage: "",
+      description_EN:
+        "ComandApp is a responsive web system designed to streamline service order management. It enables businesses to create, track, and export service records, making it especially useful for operations like laundries. The system is currently being used by two real-world laundry businesses.",
+      description_PT:
+        "ComandApp é um sistema web responsivo desenvolvido para facilitar a gestão de comandas de serviço. A aplicação permite a criação, acompanhamento e exportação de registros de atendimentos, sendo ideal para negócios como lavanderias. Atualmente, o sistema está em uso real por duas lavanderias.",
+      techs: [
+        "Next.js",
+        "TypeScript",
+        "Styled-Components",
+        "Prisma",
+        "MongoDB",
+      ],
+      image: "/assets/images/dataImages/comandapp_layout.png",
+      type: "professional",
+    },
+    {
+      id: 893748559,
+      name: "lacrei saúde",
+      html_url: "https://lacreisaude.com.br/",
+      homepage: "",
+      description_EN:
+        "As a volunteer contributor on the front-end team at Lacrei Saúde, I helped build a custom Design System to ensure accessible and inclusive interfaces across all platforms, supporting health and social rights for the LGBTQIAPN+ community.",
+      description_PT:
+        "Como colaborador voluntário no time de front-end na Lacrei Saúde, contribuí na construção de um Design System próprio para garantir interfaces acessíveis e inclusivas em todas as plataformas, promovendo saúde e direitos sociais para a comunidade LGBTQIAPN+.",
+      techs: ["React", "TypeScript", "Storybook", "Styled-Components"],
+      image: "/assets/images/dataImages/lacreiSaude_layout.png",
+      type: "professional",
+    },
+    {
       id: 773071238,
       name: "moovie",
       html_url: "https://github.com/mikael-espinola/moovie-v1",
@@ -13,6 +45,7 @@ export async function GET() {
         "Desenvolvido com TypeScript, Styled-Components e React, o Moovie é uma plataforma projetada para facilitar a descoberta de filmes. A aplicação permite aos usuários explorar títulos, assistir a trailers, acessar críticas e obter informações detalhadas sobre cada filme.",
       techs: ["React", "TypeScript", "Styled-Components"],
       image: "/assets/images/dataImages/Moovie_layout.png",
+      type: "personal",
     },
     {
       id: 765111842,
@@ -25,6 +58,7 @@ export async function GET() {
       image: "/assets/images/dataImages/githunt_layout.png",
       description_EN:
         "Built with a focus on React and UX best practices, GitHunt is an application that enhances the experience of searching for GitHub repositories. Throughout its development, concepts such as useState, RESTful API consumption, Mobile First approach, and Debounce implementation were applied to optimize the search process. Additionally, a dark mode logic was incorporated to ensure greater visual comfort for users.",
+      type: "personal",
     },
     {
       id: 612029466,
@@ -37,6 +71,7 @@ export async function GET() {
       image: "/assets/images/dataImages/weather_app_layout.png",
       description_EN:
         "Built with React, TypeScript, and Bootstrap, Weather is an application that displays well-organized weather information based on the city entered by the user.",
+      type: "personal",
     },
     {
       id: 796012684,
@@ -49,6 +84,7 @@ export async function GET() {
       image: "/assets/images/dataImages/bmi_layout.jpg",
       description_EN:
         "This is a Body Mass Index (BMI) calculation app, developed with React Native under the mentorship of the One Bit Code YT channel. Throughout the process, I enhanced my React Native skills, strengthening fundamental concepts for mobile development. ",
+      type: "personal",
     },
     {
       id: 784991749,
@@ -61,6 +97,7 @@ export async function GET() {
         "Uma lista de afazeres simples, desenvolvida para aprimorar minhas habilidades no gerenciamento de estado com Redux. O projeto foca em proporcionar uma experiência fluida para adicionar, remover e marcar tarefas como concluídas, reforçando conceitos essenciais de Redux e React. ",
       techs: ["TypeScript", "Styled-Components", "Redux"],
       image: "/assets/images/dataImages/todo_layout.png",
+      type: "personal",
     },
     {
       id: 607954116,
@@ -73,6 +110,7 @@ export async function GET() {
       image: "/assets/images/dataImages/flappybird_layout.png",
       description_EN:
         "A recreation of the classic Flappy Bird, built using JavaScript, HTML, and CSS. The project focuses on DOM manipulation to handle game logic, element movement, and collision detection. This implementation strengthened key JavaScript concepts, such as event handling, loops, and animation control in the browser. ",
+      type: "personal",
     },
 
     {
@@ -86,6 +124,7 @@ export async function GET() {
       image: "/assets/images/dataImages/mario_layout.png",
       description_EN:
         "An interactive Landing Page built to promote the new Super Mario Bros movie. This project was developed during the Full Stack Development Intensive, under the guidance of professors @devemdobro, strengthening HTML, CSS, and JavaScript skills for creating dynamic and responsive interfaces.",
+      type: "personal",
     },
   ];
 
