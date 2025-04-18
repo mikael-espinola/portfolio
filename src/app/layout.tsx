@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import StyledComponentsRegistry from "@/lib/registry";
 import { GlobalStyles } from "./globalStyles";
-import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import RefProvider from "@/contextApi/RefComponentsContext";
 import LangProvider from "@/contextApi/LangProvider";
 import { Open_Sans } from "next/font/google";
+import "./globals.css";
 
 const openSans = Open_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
