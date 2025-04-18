@@ -14,6 +14,7 @@ export const Container = styled.div`
 export const Title = styled.h1`
   text-align: center;
   padding-top: 5rem;
+  font-size: 40px;
 `;
 
 export const FormBox = styled.form`
