@@ -27,4 +27,5 @@ export const Box = styled.div`
 
 export const Span = styled.span`
   font-size: 16px;
+  position: absolute;
 `;
