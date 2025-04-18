@@ -17,6 +17,8 @@ export const CardTitle = styled.h4`
   line-height: 1.6rem;
   text-transform: capitalize;
   cursor: default;
+  font-size: 1.5rem;
+  font-weight: 700;
 `;
 
 export const ImageWrapper = styled.div`

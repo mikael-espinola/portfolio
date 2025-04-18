@@ -13,7 +13,7 @@ import {
 } from "./style";
 import { Data } from "../projects/Projects";
 import Image from "next/image";
-import { Tag } from "../projects/style";
+import TagWrapper from "../tagWrapper/TagWrapper";
 
 interface Props {
   data: Data;
@@ -34,26 +34,22 @@ function formatList(items: string[]) {
 
 const ProjectCard = ({ data, lang }: Props) => {
   return (
-    <Card key={data.id}>
+    <Card key={data.id} aria-label={data.name}>
       <ImageWrapper>
         <Image alt="" src={data.image} fill />
       </ImageWrapper>
-      <CardTitle>
-        <>{data.name}</>
-      </CardTitle>
-      <>
-        {data.type === "professional" && lang === "en" ? (
-          <Tag>Professional Project</Tag>
-        ) : data.type === "professional" && lang === "pt" ? (
-          <Tag>Projeto Profissional</Tag>
-        ) : data.type === "personal" && lang === "en" ? (
-          <Tag>Personal Project</Tag>
-        ) : data.type === "personal" && lang === "pt" ? (
-          <Tag>Projeto Pessoal</Tag>
-        ) : (
-          ""
-        )}
-      </>
+      <CardTitle>{data.name}</CardTitle>
+      <TagWrapper>
+        {data.type === "professional" && lang === "en"
+          ? "Professional Project"
+          : data.type === "professional" && lang === "pt"
+          ? "Projeto Profissional"
+          : data.type === "personal" && lang === "en"
+          ? "Personal Project"
+          : data.type === "personal" && lang === "pt"
+          ? "Projeto Pessoal"
+          : ""}
+      </TagWrapper>
       <Description>
         {lang === "en" ? data.description_EN : data.description_PT}
       </Description>
