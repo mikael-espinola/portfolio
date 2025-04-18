@@ -23,6 +23,6 @@ export const SocialMediaLink = styled(Link)<Props>`
         : $type === "github"
         ? "white"
         : $type === "gmail" && "red"};
-    font-size: 24px;
+    font-size: 28px;
   }
 `;

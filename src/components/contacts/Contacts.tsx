@@ -20,7 +20,13 @@ const Contacts = () => {
           <SocialMedia />
         </Box>
       </SocialWrapper>
-      <Span>{lang === "en" ? "Or" : "Ou"}</Span>
+
+      <div className="my-3 w-full p-2 flex justify-center relative">
+        <div className=" h-px rounded w-50  bg-black"></div>
+        <span className=" absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 px-4 text-md gradient-span bg-black text-white rounded-md">
+          {lang === "en" ? "Or" : "Ou"}
+        </span>
+      </div>
       <Form />
     </Container>
   );
