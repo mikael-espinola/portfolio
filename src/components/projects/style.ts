@@ -73,14 +73,20 @@ export const Button = styled.button`
   width: 100%;
   padding: 0.435rem 1rem;
   border-radius: 4px;
-  border: none;
+  border: 1px solid #ffffff;
   cursor: pointer;
   justify-content: center;
   margin-top: 1.2rem;
 
-  &:hover {
+  &:active {
     background-color: #afafaf45;
-    color: white;
+  }
+
+  @media ${screen.large} {
+    &:hover {
+      background-color: #afafaf45;
+      color: white;
+    }
   }
 `;
 

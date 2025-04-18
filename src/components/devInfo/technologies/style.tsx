@@ -88,10 +88,21 @@ export const ContainerButton = styled.div`
 `;
 
 export const ArrowButton = styled.button`
-  width: 15em;
+  width: 25%;
   border-radius: 10px;
-  border: none;
   cursor: pointer;
+  border: 1px solid #ffffff;
+
+  &:active {
+    background-color: #afafaf45;
+  }
+  @media ${screen.large} {
+    width: 10%;
+    &:hover {
+      background-color: #afafaf45;
+      color: white;
+    }
+  }
 `;
 
 export const IconContainer = styled.span`

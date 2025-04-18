@@ -25,6 +25,9 @@ export const Span = styled.span`
 `;
 
 export const Title = styled.h4`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 40px;
   margin-top: 1.5rem;
 `;
