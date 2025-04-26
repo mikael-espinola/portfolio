@@ -5,7 +5,7 @@ export async function GET() {
     {
       id: 982374120,
       name: "comandApp",
-      html_url: "https://test.comandapp.com.br/",
+      html_url: "https://www.comandapp.com.br/",
       homepage: "",
       description_EN:
         "ComandApp is a responsive web system designed to streamline service order management. It enables businesses to create, track, and export service records, making it especially useful for operations like laundries. The system is currently being used by two real-world laundry businesses.",
